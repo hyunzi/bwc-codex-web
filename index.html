@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>과일 달력 일정관리</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <div class="title-group">
+        <span class="emoji">🍊</span>
+        <div>
+          <p class="eyebrow">간단한 일정관리</p>
+          <h1>과일 스탬프 달력</h1>
+        </div>
+      </div>
+      <div class="month-nav">
+        <button class="ghost" id="prev-month" aria-label="이전 달">‹</button>
+        <div id="current-month" aria-live="polite"></div>
+        <button class="ghost" id="next-month" aria-label="다음 달">›</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel__header">
+        <h2>스탬프 선택</h2>
+        <p class="caption">아이콘을 선택한 뒤 날짜를 눌러주세요.</p>
+      </div>
+      <div class="fruit-picker" id="fruit-picker"></div>
+    </section>
+
+    <section class="panel calendar-panel">
+      <div class="panel__header">
+        <h2>달력</h2>
+        <p class="caption">날짜를 누르면 선택한 과일이 표시됩니다.</p>
+      </div>
+      <div class="calendar" id="calendar"></div>
+    </section>
+
+    <div class="helper" id="helper" role="status" aria-live="polite">
+      원하는 과일을 선택하고 날짜를 눌러 일정을 남겨보세요.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
