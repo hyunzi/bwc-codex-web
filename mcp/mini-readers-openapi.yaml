@@ -1,0 +1,50 @@
+openapi: 3.0.3
+info:
+  title: Mini Readers API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/quotes:
+    get:
+      summary: 최근 구절 목록
+      responses:
+        "200":
+          description: Quotes collection
+    post:
+      summary: 구절 등록
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/QuoteRequest"
+      responses:
+        "201":
+          description: Created quote
+  /api/quotes/{id}/share:
+    get:
+      summary: 공유용 메시지 생성
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Share payload
+components:
+  schemas:
+    QuoteRequest:
+      type: object
+      properties:
+        passage:
+          type: string
+          maxLength: 500
+        note:
+          type: string
+          maxLength: 400
+      required:
+        - passage
+        - note

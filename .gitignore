@@ -1,0 +1,50 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*.swp
+*.swo
+
+# Environment & secrets
+.env
+.env.*
+
+# IDE / editor settings
+.idea/
+.vscode/
+*.iml
+
+# Node / Playwright assets
+node_modules/
+playwright-report/
+test-results/
+**/.last-run.json
+**/.playwright-artifacts-*/
+**/screenshots/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Java / Maven artifacts
+*.class
+*.war
+*.ear
+*.jar
+*.log
+mini-readers/target/
+mini-readers/.m2
+mini-readers/data/*.db
+mini-readers/data/*.sqlite
+
+# Tooling caches
+.openai/
+.cache/
+.mcp/
+.gradle/
+
+# Misc
+archive/
+data/
+skills/

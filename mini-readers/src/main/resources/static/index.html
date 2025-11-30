@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINI READERS</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Mood Post Studio</p>
+      <h1>MINI READERS</h1>
+    </header>
+    <main class="app">
+      <section class="panel form-panel">
+        <div class="panel-header">
+          <h2>오늘 마음 기록</h2>
+          <p class="muted">감정 태그는 최대 3개까지 고를 수 있어요.</p>
+        </div>
+        <form id="quote-form" class="card">
+          <div class="field-group">
+            <label for="passage">마음에 남은 문장</label>
+            <textarea
+              id="passage"
+              name="passage"
+              required
+              maxlength="500"
+              placeholder="책 속 문장을 붙여넣어도 좋아요."></textarea>
+          </div>
+          <div class="field-group">
+            <div class="field-label">
+              <label for="mood-picker">감정 태그</label>
+              <span class="muted">최대 3개 선택</span>
+            </div>
+            <div id="mood-picker" class="tag-grid">
+              <button type="button" class="tag-pill" data-mood="감동" aria-pressed="false">감동</button>
+              <button type="button" class="tag-pill" data-mood="설렘" aria-pressed="false">설렘</button>
+              <button type="button" class="tag-pill" data-mood="힐링" aria-pressed="false">힐링</button>
+              <button type="button" class="tag-pill" data-mood="집중" aria-pressed="false">집중</button>
+              <button type="button" class="tag-pill" data-mood="위로" aria-pressed="false">위로</button>
+              <button type="button" class="tag-pill" data-mood="희망" aria-pressed="false">희망</button>
+              <button type="button" class="tag-pill" data-mood="용기" aria-pressed="false">용기</button>
+              <button type="button" class="tag-pill" data-mood="호기심" aria-pressed="false">호기심</button>
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="note">메모 (선택)</label>
+            <textarea
+              id="note"
+              name="note"
+              maxlength="400"
+              placeholder="스스로에게 남기고 싶은 한 마디가 있다면 적어보세요."></textarea>
+          </div>
+          <p id="form-error" class="form-error" hidden></p>
+          <button type="submit" class="primary">기록 남기기</button>
+        </form>
+      </section>
+      <section class="panel list-panel">
+        <div class="panel-header">
+          <h2>나의 미니 기록</h2>
+          <p class="muted">가장 최근에 남긴 문장이 위에 표시돼요.</p>
+        </div>
+        <ul id="quotes" class="list"></ul>
+      </section>
+      <section class="panel share-panel">
+        <div class="panel-header">
+          <h2>친구에게 바로 공유</h2>
+          <p class="muted">공유 카드를 만들면 메신저나 SNS에 붙여넣을 수 있어요.</p>
+        </div>
+        <article id="share-output" class="share-card placeholder">
+          <p>왼쪽 또는 위쪽 기록을 선택하면 예쁜 공유 카드가 완성됩니다.</p>
+          <p class="muted">감정 태그와 메모가 함께 포함돼요.</p>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

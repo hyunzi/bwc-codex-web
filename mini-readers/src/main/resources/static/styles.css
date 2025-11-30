@@ -1,0 +1,360 @@
+﻿:root {
+  font-family: "Pretendard Variable", "Inter", "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #eef2ff;
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --border: #e2e8f0;
+  --muted: #64748b;
+  --chip-bg: rgba(99, 102, 241, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #dbeafe, #eef2ff 55%, #fff 95%);
+  color: inherit;
+}
+
+.hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1rem 1.5rem;
+}
+
+.hero h1 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.app {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 1200px;
+  padding: 0 1.5rem 3rem;
+  margin: 0 auto;
+}
+
+.panel {
+  background: var(--card-bg);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid rgba(99, 102, 241, 0.08);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.panel-header h2 {
+  margin: 0;
+}
+
+.panel-header p {
+  margin: 0.25rem 0 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+textarea {
+  min-height: 130px;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.tag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+}
+
+.tag-pill {
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-pill.active,
+.tag-pill[aria-pressed="true"] {
+  background: linear-gradient(120deg, #a5b4fc, #818cf8);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.25);
+}
+
+button {
+  border-radius: 999px;
+  border: none;
+  padding: 0.9rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.primary {
+  background: linear-gradient(120deg, #818cf8, #6366f1);
+  color: #fff;
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.35);
+}
+
+.primary:hover {
+  background: linear-gradient(120deg, #4f46e5, #4338ca);
+}
+
+.ghost {
+  background: rgba(99, 102, 241, 0.08);
+  color: var(--primary);
+  border-radius: 0.8rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.form-error {
+  color: #dc2626;
+  margin: 0;
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list li {
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quote-text {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.quote-note {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  background: rgba(226, 232, 240, 0.6);
+  color: #475569;
+}
+
+.quote-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.quote-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  background: var(--chip-bg);
+  color: var(--primary-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.share-card {
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  background: radial-gradient(circle at top left, #fed7aa, #fbcfe8, #bfdbfe);
+  color: #0f172a;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.2);
+}
+
+.share-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.share-card blockquote {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.share-note {
+  margin: 0;
+  font-style: italic;
+}
+
+.share-signature {
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: rgba(15, 23, 42, 0.8);
+}
+
+.share-status {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.share-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.list .placeholder {
+  border: 2px dashed rgba(148, 163, 184, 0.5);
+  background: rgba(148, 163, 184, 0.08);
+  color: var(--muted);
+  text-align: center;
+  font-weight: 600;
+}
+
+.placeholder {
+  color: rgba(15, 23, 42, 0.75);
+  background: rgba(148, 163, 184, 0.12);
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+  box-shadow: none;
+}
+
+@media (min-width: 1360px) {
+  .app {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .app {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding-bottom: 2rem;
+  }
+
+  .panel {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    text-align: left;
+    padding: 2.5rem 1.25rem 1rem;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+    padding: 0 1.25rem 2rem;
+  }
+
+  .panel {
+    padding: 1.25rem;
+  }
+
+  .share-card {
+    padding: 1.25rem;
+    min-height: 180px;
+  }
+
+  .tag-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  button,
+  .tag-pill {
+    font-size: 0.9rem;
+  }
+
+  textarea {
+    min-height: 110px;
+  }
+
+  .quote-text {
+    font-size: 0.95rem;
+  }
+}
